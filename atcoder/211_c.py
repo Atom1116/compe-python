@@ -22,20 +22,20 @@
 S = input()
 chokudai = 'chokudai'
 
-dp = [[0] * (len(chokudai) + 1) for _ in range(len(S)+1)]
+dp = [[0] * (len(chokudai) + 1) for _ in range(len(S) + 1)]
 # print(dp)
-for i in range(len(S)+1):
+for i in range(len(S) + 1):
     for j in range(len(chokudai) + 1):
         if j == 0:
             dp[i][j] = 1
         elif i == 0:
             dp[i][j] = 0
-        elif S[i-1] != chokudai[j-1]:
-            dp[i][j] = dp[i-1][j]
+        elif S[i - 1] != chokudai[j - 1]:
+            dp[i][j] = dp[i - 1][j]
         else:
             dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1]
-        
-        
+
+
 # print(dp)
 print(dp[len(S)][8] % (10 ** 9 + 7))
 
