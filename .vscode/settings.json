@@ -1,7 +1,7 @@
 {
-  "python.pythonPath":"/Users/hirosehikaru/git_ripository/compe_python/pu37/bin/python",
+  "python.pythonPath":"/Users/user/repository/compe_python/py37/bin/python",
   "python.autoComplete.extraPaths": [
-    "/Users/hirosehikaru/git_ripository/compe_python/pu37/lib/python3.7/site-packages"
+    "/Users/user/repository/compe_python/py37/lib/python3.7/site-packages"
   ],
   // 静的解析の設定
   "python.linting.pylintEnabled": false,// 標準の静的解析をOFF
@@ -13,6 +13,7 @@
     "--max-complexity=20"
   ],
   // コード補完の設定
+  "editor.formatOnSave": true,
   "python.formatting.provider": "autopep8",
   "python.formatting.autopep8Args": [
     // 積極的なコード整形

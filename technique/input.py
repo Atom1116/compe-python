@@ -32,11 +32,10 @@ print(list1, list2)
 # タプルにしたい時
 lst3 = tuple(input().split())
 # intの場合
-lst4 = tuple(map(int,input().split()))
+lst4 = tuple(map(int, input().split()))
 
-# 出力して確認 
-print(type(lst3), lst3, type(lst4), lst4) 
-
+# 出力して確認
+print(type(lst3), lst3, type(lst4), lst4)
 
 
 # 事前に入力される行数がわかる時
@@ -55,7 +54,7 @@ print(type(lst3), lst3, type(lst4), lst4)
 N, M = map(int, input().split())
 P = [input().split() for i in range(M)]
 # 数字
-N, M = map(int,input().split()) 
-P = [list(map(int,input().split())) for i in range(M)]
+N, M = map(int, input().split())
+P = [list(map(int, input().split())) for i in range(M)]
 
 print(P)
