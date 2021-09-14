@@ -3,6 +3,35 @@ N = int(input())
 S = list(input())
 Q = int(input())
 
+# TAB = [list(map(int, input())) for _ in range(Q)]
+
+flag = False
+
+# FLIP
+
+for i in range(Q):
+    t, a, b = map(int, input().split())
+    if t == 1:
+        if flag:
+            if a > N - 1:
+                a -= N
+            else:
+                a += N
+            if b > N - 1:
+                b -= N
+            else:
+                b += N
+        tmp = S[a - 1]
+        S[a - 1] = S[b - 1]
+        S[b - 1] = tmp
+    else:
+        flag = not flag  # 反転
+
+if flag:
+    S = S[N:] + S[:N]  # 文字列の前後半入れ替え
+
+print(''.join(S))
+
 
 # N = int(input())
 # S = input()
