@@ -15,11 +15,10 @@
 #     else:
 #         # 1つ前からの移動と2つ前からの移動の絶対値の最小をdp[i]に入れる
 #         dp[i] = min(dp[i - 1] + abs(h[i] - h[i - 1]), dp[i - 2] + abs(h[i] - h[i - 2]))
-    
+
 #     # for文が終わる時、dpリストが満たされる
 
 # print(dp[n - 1])
-
 
 
 # ナップザック問題
@@ -61,27 +60,30 @@ def chmin(a, b):
     if a > b:
         a = b
 
+
 S = "logistic"
 T = "algorithm"
 
-INF = 10*100
+INF = 10 * 100
 print(INF)
 
-dp = [[INF]*(len(T)+1) for _ in range(len(S)+1)]
+dp = [[INF] * (len(T) + 1) for _ in range(len(S) + 1)]
 dp[0][0] = 0
-for i in range(len(S)+1):
-    for j in range(len(T)+1):
+for i in range(len(S) + 1):
+    for j in range(len(T) + 1):
         # 変更処理
         if i > 0 and j > 0:
-            if S[i-1] == T[j-1]:
-                dp[i][j]= min(dp[i][j], dp[i-1][j-1])
+            if S[i - 1] == T[j - 1]:
+                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1])
             else:
-                dp[i][j]= min(dp[i][j], dp[i-1][j-1] + 1) # dpテーブルを斜め方向移動
+                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + 1)  # dpテーブルを斜め方向移動
         # 削除操作
-        if i>0: dp[i][j]= min(dp[i][j], dp[i-1][j] + 1) # dpテーブルを列方向移動
+        if i > 0:
+            dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1)  # dpテーブルを列方向移動
 
         # 挿入操作
-        if j>0: dp[i][j]= min(dp[i][j], dp[i][j-1] + 1) # dpテーブルの行方向移動
+        if j > 0:
+            dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1)  # dpテーブルの行方向移動
 
 print(dp)
 print(dp[len(S)][len(T)])
@@ -93,4 +95,3 @@ print(dp[len(S)][len(T)])
 # 区間分割[t0, t1),[t1, t2),...[tk-1, tk)のスコアを
 # ct0t1 + ct1t2,...ct-1tk
 # によって定義します。N要素の区間分割の仕方を全て考えた時の、考えられるスコアの最小値を求めてください
-
