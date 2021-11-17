@@ -20,5 +20,8 @@
     "--aggressive",
     // 行の最大文字数を200
     "--max-line-length=200"
+  ],
+  "python.analysis.extraPaths": [
+    "/Users/user/repository/compe_python/py37/lib/python3.7/site-packages"
   ]
 }

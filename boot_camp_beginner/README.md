@@ -1,1 +1,0 @@
-AatCoder ProgramsのBootCampBeginnerのアウトプット
