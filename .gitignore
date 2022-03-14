@@ -1,2 +1,5 @@
 py37/
 pu37/
+.vscode/
+
+settings.json
